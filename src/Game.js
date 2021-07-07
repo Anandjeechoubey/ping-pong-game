@@ -18,7 +18,7 @@ const Game = (props) => {
                 Wins: {counter2}
             </h4>
             <hr />
-            <h4>Current Winner: {counter1 >= counter2 ? props.player1 : props.player2}</h4>
+            <h4>Current Winner: {counter1 >= counter2 ? counter1 > counter2 ? props.player1 : "Scores Level" : props.player2}</h4>
             <h4>Win Difference: {counter1 >= counter2 ? counter1 - counter2 : counter2 - counter1}</h4>
 
         </div>

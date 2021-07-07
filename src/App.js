@@ -1,7 +1,6 @@
 import './App.css';
 import React from 'react';
-import Home from './Home'
-import Game from './Game'
+import Game from './Game';
 
 function App() {
   const [page, setPage] = React.useState('Start');
@@ -24,7 +23,14 @@ function App() {
       <div className="card">
         <h2>Ping Pong Game</h2>
         {
-          page === 'Start' ? <Home {...props} /> : <Game {...props} />
+          page === 'Start' ? 
+          <div className="home">
+            <h4>Player 1 Name</h4>
+            <input value={player1} onChange={(e) => {setPlayer1(e.target.value)}}/>
+            <h4>Player 2 Name</h4>
+            <input value={player2} onChange={(e) => {setPlayer2(e.target.value)}}/>
+          </div>
+         : <Game {...props} />
         }
         <button onClick={togglePage}><h3>{page} Game</h3></button>
       </div>
